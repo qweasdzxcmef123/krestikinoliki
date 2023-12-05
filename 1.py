@@ -49,15 +49,14 @@ def play_game():
                 display_board()
                 print("Игрок", current_player, "победил!")
                 game_over = True
-            # Проверяем ничью
-            elif all(cell != " " f  or row in board for cell in row):
+            # проверяем ничью
+            elif all(cell != " " for row in board for cell in row):
                 display_board()
                 print("Ничья!")
                 game_over = True
-            # Переключаем игрока
+            # переключаем игрока
             else:
                 current_player = "O" if current_player == "X" else "X"
         else:
             print("Выбранная ячейка уже занята. Попробуйте снова.")
-
 play_game()
